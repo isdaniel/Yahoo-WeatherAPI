@@ -1,5 +1,7 @@
 自己動手做簡單顯示一周天氣預報小程式
+
 ![alt text](https://az787680.vo.msecnd.net/user/九桃/e5d32e1d-950b-4dfa-9abc-eae333a7ae6c/1495339070_24073.PNG)
+
 目前可以撈到天氣資訊的平台有:
 
 * Yahoo weather API:
@@ -10,19 +12,16 @@ https://developer.yahoo.com/weather/
 每15~30分更新一次天氣資料
 http://opendata.cwb.gov.tw/index;jsessionid=8C3566791736071759401AAEB07A2455
 
+<br/>
 
+這次我是選擇使用Yahoo weatherAPI，搭配使用JQuery和HTML,Css前端來實現
 
-這次我是選擇使用Yahoo weatherAPI
+有三個主要呈現的資訊
 
-搭配使用JQuery和HTML,Css前端來實現
+- 一周每日天氣(圖片,文字)
+- 哪個縣市
+- 平均溫度
 
-
-
-    有三個主要呈現的資訊
-
-一周每日天氣(圖片,文字)
-哪個縣市
-平均溫度
 最核心的js程式 WeatherScript.JS
 ```javascript
 //每一秒跑一張圖 大於目前城鎮數量從0開始算
