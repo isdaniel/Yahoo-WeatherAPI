@@ -22,24 +22,25 @@ var WeekChinese={
 	"Sun":"日"
 }
 
+
 var weather_con = {
-	"01":["weather_sunny.png","晴天"],
-	"02":["weather_sunny.png","晴天"],
-	"03":["weather_cloudy.png","多雲"],
-	"04":["weather_cloudy.png","多雲"],
-	"05":["weather_cloudy.png","多雲"],
-	"06":["weather_cloudy.png","多雲"],
-	"06":["weather_rain.png","雨天"],
-	"07":["weather_rain.png","雨天"],
-	"08":["weather_rain.png","雨天"],
-	"09":["weather_rain.png","雨天"],
-	"10":["weather_rain.png","雨天"],
-	"11":["weather_rain.png","雨天"],
-	"12":["weather_rain.png","雨天"],
-	"13":["weather_rain.png","雨天"],
-	"14":["weather_rain.png","雨天"],
-	"15":["weather_rain.png","雨天"],
-	"16":["weather_rain.png","雨天"],
-	"17":["weather_rain.png","雨天"],
-	"18":["weather_rain.png","雨天"]
+	"01":["https://ucarecdn.com/15a2b873-a703-4a62-b150-b195ee26b6a6/","晴天"],
+	"02":["https://ucarecdn.com/15a2b873-a703-4a62-b150-b195ee26b6a6/","晴天"],
+	"03":["https://ucarecdn.com/84290631-e5c5-44c4-a4aa-00949deece0c/","多雲"],
+	"04":["https://ucarecdn.com/84290631-e5c5-44c4-a4aa-00949deece0c/","多雲"],
+	"05":["https://ucarecdn.com/84290631-e5c5-44c4-a4aa-00949deece0c/","多雲"],
+	"06":["https://ucarecdn.com/84290631-e5c5-44c4-a4aa-00949deece0c/","多雲"],
+	"06":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"07":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"08":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"09":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"10":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"11":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"12":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"13":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"14":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"15":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"16":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"17":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"],
+	"18":["https://ucarecdn.com/6771b2c0-6550-49c4-8d66-4afbb7cecc6c/","雨天"]
 }

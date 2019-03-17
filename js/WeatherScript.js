@@ -56,7 +56,7 @@ function NowWeather(forcast){
 	var weatherImgCode = Wx.filter(compareDate)[index].elementValue[1].value;
 	var wetPercent = RH.filter(compareDate)[index].elementValue[0].value
 	var $WeatherNow='<div class="weatherNowIcon">'+
-						'<img src="images/'+weather_con[weatherImgCode][0]+'" />'+//天氣編號
+						'<img src="'+weather_con[weatherImgCode][0]+'" />'+//天氣編號
 					'</div>'+
 					'<div class="weatherNowDetail">'+
 						'<h2>'+weather_con[weatherImgCode][1]+'</h2>'+
@@ -89,7 +89,7 @@ function weatherWeekDay(index){
 	var $Weather='<div class="weatherWeekDay'+signoe+'">'+
 						'<p>'+GetMMDDString(today)+'</p>'+
 						'<div class="weatherWeekIcon">'+
-							'<img src="images/'+weather_con[weatherImgCode][0]+'" />'+//天氣編號
+							'<img src="'+weather_con[weatherImgCode][0]+'" />'+//天氣編號
 						'</div>'+
 						'<p>'+parseInt(averagetemp.elementValue[0].value)+'&deg;</p>'+
 					'</div>';
