@@ -77,3 +77,35 @@ function SetWeeaTher(woeid) {
  * format:回傳資料型態:JSON或XML
  
 在會將資料傳送回來我們在依照他給的資料來綁定
+
+----
+
+## **2019/03/17 更新**
+
+我發現Yahoo weather API 轉移了
+
+> Important EOL Notice: As of Thursday, Jan. 3, 2019, the weather.yahooapis.com and query.yahooapis.com for Yahoo Weather API will be retired. 
+To continue using our free Yahoo Weather APIs, use https://weather-ydn-yql.media.yahoo.com/forecastrss. Follow below instructions to get credentials and onboard to this free Yahoo Weather API service.
+
+所以我改成使用
+
+* 氣象資料開放平台: 每15~30分更新一次天氣資料http://opendata.cwb.gov.tw/index;jsessionid=8C3566791736071759401AAEB07A2455
+
+
+使用前須先申請 授權碼 並將授權碼填入 `Authorization` 參數中
+
+``` javascript
+var parameters = {
+	Authorization : "{替換成自己的ID}", //替換成自己的ID
+	format:"JSON",
+	locationName: CName,
+	elementName:"T,RH,Wx",
+	sort:"time"
+};
+```
+
+![alt text](https://az787680.vo.msecnd.net/user/%E4%B9%9D%E6%A1%83/e5d32e1d-950b-4dfa-9abc-eae333a7ae6c/1552788030_83481.PNG)
+
+因為氣象資料開放平台有提供濕度 所以我將他呈現在當天的資訊上
+
+

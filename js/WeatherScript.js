@@ -4,48 +4,75 @@ create by daniel 2017/02/23
 */
 var cityLenght = 0;//多少城市
 var i = 0;
+var Wx,T,RH;
 //設置天氣圖
-function SetWeeaTher(woeid) {
-    //將locationQuery不要轉換
-    var locationQuery = escape("select * from weather.forecast where woeid ='" + woeid + "' and u='c'");
-    $.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + locationQuery + "&format=json",
-        function (data) {
-            var forcast = data.query.results.channel.item.forecast;//本周天氣
-            var cityName = word[0].City[i].CName//城市
-			$("#CName").text(cityName);
-			Setforcast(forcast);
-			i++;
-        });
+function SetWeather(CName) {
+	/**
+	 * Wx 天氣現象
+		RH 濕度
+		T 均溫
+	*/
+	var parameters = {
+		Authorization : "{替換成自己的ID}", //替換成自己的ID
+		format:"JSON",
+		locationName: CName,
+		elementName:"T,RH,Wx",
+		sort:"time"
+	};
+
+	$.ajax({
+		method:'Get',
+		data:parameters,
+		url: WeekForcastUrl 
+	}).done(function(data) {
+		$("#CName").text(CName);
+		T = data.records.locations[0].location[0].weatherElement.filter(x=>x.elementName ==='T')[0].time;
+		Wx =data.records.locations[0].location[0].weatherElement.filter(x=>x.elementName ==='Wx')[0].time;
+		RH =data.records.locations[0].location[0].weatherElement.filter(x=>x.elementName ==='RH')[0].time;
+		Setforcast();
+		i++;
+	});
 }
 
-function Setforcast(forcast) {
+function compareDate(x){
+	return new Date(x.startTime).getDate()==new Date(x.endTime).getDate();
+}
+
+function Setforcast() {
 	$(".weatherNow").empty();
 	$(".weatherWeek").empty();
 	for(index = 0; index < 7; index++){
 		if (index == 0) {
-			NowWeather(forcast[index]);
+			NowWeather();
         }
-		weatherWeekDay(forcast[index],index);	
+	    weatherWeekDay(index);	
 	}
 }
 //今天氣象
-function NowWeather(data){
+function NowWeather(forcast){
 	//天氣平均溫度
-	var averagetemp=(parseInt(data.high)+parseInt(data.low))/2;
+	
+	var averagetemp= T.filter(compareDate)[index];
+	var weatherImgCode = Wx.filter(compareDate)[index].elementValue[1].value;
+	var wetPercent = RH.filter(compareDate)[index].elementValue[0].value
 	var $WeatherNow='<div class="weatherNowIcon">'+
-						'<img src="images/'+weather_con[data.code][0]+'" />'+//天氣編號
+						'<img src="images/'+weather_con[weatherImgCode][0]+'" />'+//天氣編號
 					'</div>'+
 					'<div class="weatherNowDetail">'+
-						'<h2>'+weather_con[data.code][1]+'</h2>'+
-						'<p>'+data.low+'&deg; / '+data.high+'&deg;</p>'+//最高  最低溫
+						'<h2>'+weather_con[weatherImgCode][1]+'</h2>'+
+						'<p>濕度：'+wetPercent+'%</p>'+
 					'</div>'+
 					'<div class="weatherNowTemp">'+
-						'<p>'+parseInt(averagetemp)+'&deg;</p>'+
+						'<p>'+parseInt(averagetemp.elementValue[0].value)+'&deg;</p>'+
 					'</div>';
 	$(".weatherNow").append($WeatherNow);							
 }
+
+function GetMMDDString(today){
+	return (today.getMonth() + 1) + '/' + today.getDate()
+}
 //下一周氣象
-function weatherWeekDay(data,index){
+function weatherWeekDay(index){
 	//如果是下周的頭和尾
 	var signoe='';
 	if(index==0){
@@ -55,13 +82,16 @@ function weatherWeekDay(data,index){
 		signoe=' weatherWeekDayLast';		
 	}
 	//天氣平均溫度
-	var averagetemp=(parseInt(data.high)+parseInt(data.low))/2;
+	var averagetemp=T.filter(compareDate)[index];
+	var weatherImgCode = Wx.filter(compareDate)[index].elementValue[1].value;
+	var today = new Date(averagetemp.startTime);
+	
 	var $Weather='<div class="weatherWeekDay'+signoe+'">'+
-						'<p>'+WeekChinese[data.day]+'</p>'+//星期幾
+						'<p>'+GetMMDDString(today)+'</p>'+
 						'<div class="weatherWeekIcon">'+
-							'<img src="images/'+weather_con[data.code][0]+'" />'+//天氣編號
+							'<img src="images/'+weather_con[weatherImgCode][0]+'" />'+//天氣編號
 						'</div>'+
-						'<p>'+parseInt(averagetemp)+'&deg;</p>'+
+						'<p>'+parseInt(averagetemp.elementValue[0].value)+'&deg;</p>'+
 					'</div>';
 	$(".weatherWeek").append($Weather);							
 }
@@ -78,7 +108,7 @@ function ShowWaeather() {
     }
     $("#todayWeather").empty();
     $("#otherdayWeather").empty();
-    SetWeeaTher(word[0].City[i].ID);
+    SetWeather(word[0].City[i].CName);
     setTimeout("ShowWaeather()", 5000);
 };
 ShowWaeather();
