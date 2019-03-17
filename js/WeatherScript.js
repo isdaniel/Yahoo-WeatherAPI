@@ -13,7 +13,7 @@ function SetWeather(CName) {
 		T 均溫
 	*/
 	var parameters = {
-		Authorization : "{替換成自己的ID}", //替換成自己的ID
+		Authorization : "CWB-D948CD74-D1E1-4026-B416-9A066C0F7122", //替換成自己的ID
 		format:"JSON",
 		locationName: CName,
 		elementName:"T,RH,Wx",

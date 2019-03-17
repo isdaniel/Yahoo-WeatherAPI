@@ -92,7 +92,9 @@ To continue using our free Yahoo Weather APIs, use https://weather-ydn-yql.media
 * 氣象資料開放平台: 每15~30分更新一次天氣資料http://opendata.cwb.gov.tw/index;jsessionid=8C3566791736071759401AAEB07A2455
 
 
-使用前須先申請 授權碼 並將授權碼填入 `Authorization` 參數中
+使用前須先申請 [授權碼]([http://example.net/](https://opendata.cwb.gov.tw/devManual/insrtuction#getUserAuthkeyAnchor))  並將授權碼填入 `Authorization` 參數中
+
+
 
 ``` javascript
 var parameters = {
@@ -105,6 +107,13 @@ var parameters = {
 ```
 
 ![alt text](https://az787680.vo.msecnd.net/user/%E4%B9%9D%E6%A1%83/e5d32e1d-950b-4dfa-9abc-eae333a7ae6c/1552788030_83481.PNG)
+
+
+
+[天氣API文件](https://opendata.cwb.gov.tw/opendatadoc/CWB_Opendata_API_V1.2.pdf) 
+
+[天氣參數對照表](https://opendata.cwb.gov.tw/opendatadoc/MFC/D0047.pdf) 
+
 
 因為氣象資料開放平台有提供濕度 所以我將他呈現在當天的資訊上
 
