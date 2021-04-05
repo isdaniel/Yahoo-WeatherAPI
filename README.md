@@ -1,5 +1,7 @@
 自己動手做簡單顯示一周天氣預報小程式
 
+![](https://i.imgur.com/YLculzX.png)
+
 目前可以撈到天氣資訊的平台有:
 
 * Yahoo weather API:
@@ -103,10 +105,6 @@ var parameters = {
 	sort:"time"
 };
 ```
-
-![alt text](https://az787680.vo.msecnd.net/user/%E4%B9%9D%E6%A1%83/e5d32e1d-950b-4dfa-9abc-eae333a7ae6c/1552788030_83481.PNG)
-
-
 
 [天氣API文件](https://opendata.cwb.gov.tw/opendatadoc/CWB_Opendata_API_V1.2.pdf) 
 
