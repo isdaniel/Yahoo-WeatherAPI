@@ -42,5 +42,10 @@ var weather_con = {
 	"15":["https://isdaniel.github.io/Yahoo-WeatherAPI/Images/weather_rain.png","雨天"],
 	"16":["https://isdaniel.github.io/Yahoo-WeatherAPI/Images/weather_rain.png","雨天"],
 	"17":["https://isdaniel.github.io/Yahoo-WeatherAPI/Images/weather_rain.png","雨天"],
-	"18":["https://isdaniel.github.io/Yahoo-WeatherAPI/Images/weather_rain.png","雨天"]
+	"18":["https://isdaniel.github.io/Yahoo-WeatherAPI/Images/weather_rain.png","雨天"],
+	"19":["https://isdaniel.github.io/Yahoo-WeatherAPI/blob/master/Images/weather_thunder.png","多雲午後短暫雷陣雨"],
+	"20":["https://isdaniel.github.io/Yahoo-WeatherAPI/blob/master/Images/weather_thunder.png","多雲午後短暫雷陣雨"],
+	"21":["https://isdaniel.github.io/Yahoo-WeatherAPI/blob/master/Images/weather_thunder.png","多雲午後短暫雷陣雨"],
+	"22":["https://isdaniel.github.io/Yahoo-WeatherAPI/blob/master/Images/weather_thunder.png","多雲午後短暫雷陣雨"],
+	"23":["https://isdaniel.github.io/Yahoo-WeatherAPI/blob/master/Images/weather_thunder.png","多雲午後短暫雷陣雨"]
 }
